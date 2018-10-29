@@ -1,4 +1,4 @@
-# LUMDB - Level Up Movie Database
+# MOVDB - Movie Database
 
 ![MOVDB - List View](./movdb-list.png) ![MOVDB - Detail View](./movdb-details.png)
 
