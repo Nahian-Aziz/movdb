@@ -1,3 +1,4 @@
+/* eslint react/no-did-mount-set-state: 0 */
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Overdrive from 'react-overdrive';
@@ -8,41 +9,41 @@ const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
 
 class MovieDetail extends Component {
   state = {
-    movie: {},
+    movie: {}
   };
 
   async componentDidMount() {
     try {
-      const result = await fetch(
+      const res = await fetch(
         `https://api.themoviedb.org/3/movie/${
           this.props.match.params.id
-        }?api_key=29b9acf7ab2c27f191e212928ff4c160&language=en-US`,
+        }?api_key=29b9acf7ab2c27f191e212928ff4c160&language=en-US`
       );
-      const movie = await result.json();
-
+      const movie = await res.json();
       this.setState({
-        movie,
+        movie
       });
-    } catch (error) {
-      console.log(error);
+    } catch (e) {
+      console.log(e);
     }
   }
 
   render() {
     const { movie } = this.state;
+
     return (
       <MovieWrapper backdrop={`${BACKDROP_PATH}${movie.backdrop_path}`}>
         <MovieInfo>
-          <Overdrive id={movie.id}>
+          <Overdrive id={`${movie.id}`}>
             <Poster
               src={`${POSTER_PATH}${movie.poster_path}`}
               alt={movie.title}
             />
           </Overdrive>
           <div>
-            <h1>{this.state.movie.title}</h1>
-            <h3>{this.state.movie.release_date}</h3>
-            <p>{this.state.movie.overview}</p>
+            <h1>{movie.title}</h1>
+            <h3>{movie.release_date}</h3>
+            <p>{movie.overview}</p>
           </div>
         </MovieInfo>
       </MovieWrapper>
@@ -70,6 +71,5 @@ const MovieInfo = styled.div`
   img {
     position: relative;
     top: -5rem;
-    height: 100%;
   }
 `;
