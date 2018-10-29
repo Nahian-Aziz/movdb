@@ -23,8 +23,8 @@ module.exports = {
     'react/jsx-filename-extension': 0,
     'function-paren-newline': 0,
     'react/destructuring-assignment': 0,
-    'no-console': 0
-    // 'react/prefer-stateless-function': 0,
-    // 'react/require-default-props': 0
+    'no-console': 0,
+    'react/prop-types': 0,
+    'object-curly-newline': 0
   }
 };

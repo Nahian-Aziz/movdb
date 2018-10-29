@@ -1,10 +1,9 @@
 /* eslint react/no-did-mount-set-state: 0 */
 import React from 'react';
-import {
- BrowserRouter as Router, Route, Switch, Link 
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+
 import MoviesList from './MoviesList';
 import MovieDetail from './MovieDetail';
 
