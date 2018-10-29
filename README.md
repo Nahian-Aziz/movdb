@@ -1,6 +1,6 @@
 # LUMDB - Level Up Movie Database
 
-![LUMDB - List View](./docs/movdb-list.png)
+![MOVDB - List View](./movdb-list.png) ![MOVDB - Detail View](./movdb-details.png)
 
 ## Introduction
 
